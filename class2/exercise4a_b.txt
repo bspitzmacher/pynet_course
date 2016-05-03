@@ -1,0 +1,14 @@
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ mkdir SNMP
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ cd SNMP/
+(applied_python)[bspitzmacher@ip-172-30-0-39 SNMP]$ python
+Python 2.7.10 (default, Dec  8 2015, 18:25:23) 
+[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import snmp_helper
+>>> 
+>>> dir(snmp_helper)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'cmdgen', 'print_function', 'snmp_extract', 'snmp_get_oid', 'snmp_get_oid_v3']
+>>> 
+>>> 
+>>> quit()
+(applied_python)[bspitzmacher@ip-172-30-0-39 SNMP]$ 

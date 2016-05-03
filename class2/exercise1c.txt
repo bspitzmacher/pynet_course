@@ -1,0 +1,101 @@
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ vi print_hello.py
+
+~
+~
+"print_hello.py" [New] 3L, 38C written                                                                    
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ cat print_hello.py 
+
+def print_hello():
+    print "hello"
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ mv print_hello.py my_func.py
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ ls
+exercise1a_b.txt  exercise2a.py  my_func.py  test_telnet.py
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ vi exercise1c.py
+
+~
+~
+~
+~
+~
+"exercise1c.py" [New] 6L, 97C written                                                                     
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ python exercise1c.py 
+hello
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ mkdir subdir
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ mv my_func.py subdir/
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ python exercise1c.py 
+hello
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ ls
+exercise1a_b.txt  exercise1c.py  exercise2a.py  my_func.pyc  subdir  test_telnet.py
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ rm my_func.pyc 
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ python exercise1c.py 
+Traceback (most recent call last):
+  File "exercise1c.py", line 4, in <module>
+    from my_func import print_hello
+ImportError: No module named my_func
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ python
+Python 2.7.10 (default, Dec  8 2015, 18:25:23) 
+[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> import pprint import pprint
+  File "<stdin>", line 1
+    import pprint import pprint
+                       ^
+SyntaxError: invalid syntax
+>>> from pprint import pprint
+>>> pprint(sys.path)
+['',
+ '/home/bspitzmacher/DJANGOX/djproject',
+ '/home/bspitzmacher/applied_python/local/lib64/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/local/lib/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/lib64/python2.7',
+ '/home/bspitzmacher/applied_python/lib/python2.7',
+ '/home/bspitzmacher/applied_python/lib64/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/lib/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/lib64/python2.7/lib-dynload',
+ '/usr/lib64/python2.7',
+ '/usr/lib/python2.7']
+>>> quit()
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ pwd
+/home/bspitzmacher/pynet_course/class2
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ cd subdir/
+(applied_python)[bspitzmacher@ip-172-30-0-39 subdir]$ pwd
+/home/bspitzmacher/pynet_course/class2/subdir
+(applied_python)[bspitzmacher@ip-172-30-0-39 subdir]$ export PYTHONPATH='/home/bspitzmacher/pynet_course/class2/subdir'
+(applied_python)[bspitzmacher@ip-172-30-0-39 subdir]$ env | grep PYTH
+PYTHONPATH=/home/bspitzmacher/pynet_course/class2/subdir
+(applied_python)[bspitzmacher@ip-172-30-0-39 subdir]$ cd ..
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ python
+Python 2.7.10 (default, Dec  8 2015, 18:25:23) 
+[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> from pprint import pprint
+>>> pprint(sys.path)
+['',
+ '/home/bspitzmacher/pynet_course/class2/subdir',
+ '/home/bspitzmacher/applied_python/local/lib64/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/local/lib/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/lib64/python2.7',
+ '/home/bspitzmacher/applied_python/lib/python2.7',
+ '/home/bspitzmacher/applied_python/lib64/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/lib/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/lib64/python2.7/lib-dynload',
+ '/usr/lib64/python2.7',
+ '/usr/lib/python2.7']
+>>> quit()
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ ls
+exercise1a_b.txt  exercise1c.py  exercise2a.py  subdir  test_telnet.py
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ python exercise1c.py 
+hello
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ cd subdir/
+(applied_python)[bspitzmacher@ip-172-30-0-39 subdir]$ mv my_func.py ~/applied_python/lib/python2.7/site-packages/
+(applied_python)[bspitzmacher@ip-172-30-0-39 subdir]$ ls
+my_func.pyc
+(applied_python)[bspitzmacher@ip-172-30-0-39 subdir]$ rm my_func.pyc 
+(applied_python)[bspitzmacher@ip-172-30-0-39 subdir]$ cd ..
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ unset PYTHONPATH
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ env | grep PYTH
+(applied_python)[bspitzmacher@ip-172-30-0-39 class2]$ python exercise1c.py 
+hello
+
