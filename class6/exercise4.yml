@@ -1,0 +1,33 @@
+---
+
+- name: Arista Clean-Up
+  hosts: arista
+  
+  tasks:
+    - name: Blank out Ethernet2 description
+      eos_interface: name=Ethernet2 description=""
+            username={{eapi_username}}
+            password={{eapi_password}}
+            host={{eapi_hostname}}
+            port={{eapi_port}}
+            transport=https
+            
+    - name: Configure Ethernet2 for access mode, VLAN1
+      eos_switchport: name=Ethernet2 mode=access access_vlan=1 trunk_allowed_vlans=1-4094 trunk_native_vlan=1
+            username={{eapi_username}}
+            password={{eapi_password}}
+            host={{eapi_hostname}}
+            port={{eapi_port}}
+            transport=https
+
+    - name: Remove VLANs
+      eos_vlan: name={{item.name}} vlanid={{item.vlanid}} state=absent
+            username={{eapi_username}}
+            password={{eapi_password}}
+            host={{eapi_hostname}}
+            port={{eapi_port}}
+            transport=https
+      with_items:
+        - {name: SERVER, vlanid: 172}
+        - {name: USER, vlanid: 272}
+        - {name: PRINTER, vlanid: 372}

@@ -1,0 +1,17 @@
+---
+
+- name: Cisco File Transfer
+  hosts: cisco
+  gather_facts: False
+  
+  tasks:
+  - name: File transfer
+    cisco_file_transfer:
+      source_file="/home/bspitzmacher/ANSIBLE/bspitzmacher-cisco_logging.txt"
+      dest_file=bspitzmacher-cisco_logging.txt
+      overwrite=true
+      enable_scp=true
+      host={{ host }}
+      port={{ port }}
+      username={{ username }}
+      password={{ password }}

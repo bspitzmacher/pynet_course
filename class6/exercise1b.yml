@@ -1,0 +1,17 @@
+---
+
+- name: Create Arista VLANs
+  hosts: arista
+  
+  tasks:
+    - name: create SERVER,USER,PRINTER VLANs
+      eos_vlan: name={{item.name}} vlanid={{item.vlanid}}
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+      with_items:
+        - {name: SERVER, vlanid: 172}
+        - {name: USER, vlanid: 272}
+        - {name: PRINTER, vlanid: 372}
