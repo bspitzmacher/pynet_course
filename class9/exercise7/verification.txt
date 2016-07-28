@@ -1,0 +1,25 @@
+PYTHONPATH=/home/bspitzmacher/DJANGOX/djproject/:/home/bspitzmacher/pynet_course/class9/exercise7/
+(applied_python)[bspitzmacher@ip-172-30-0-39 exercise7]$ python
+Python 2.7.10 (default, Jul 20 2016, 20:53:27) 
+[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> 
+>>> sys.path
+['', '/home/bspitzmacher/DJANGOX/djproject', '/home/bspitzmacher/pynet_course/class9/exercise7', '/home/bspitzmacher/applied_python/local/lib64/python2.7/site-packages', '/home/bspitzmacher/applied_python/local/lib/python2.7/site-packages', '/home/bspitzmacher/applied_python/lib64/python2.7', '/home/bspitzmacher/applied_python/lib/python2.7', '/home/bspitzmacher/applied_python/lib64/python2.7/site-packages', '/home/bspitzmacher/applied_python/lib/python2.7/site-packages', '/home/bspitzmacher/applied_python/lib64/python2.7/lib-dynload', '/usr/lib64/python2.7', '/usr/lib/python2.7']
+>>> from pprint import pprint
+>>> pprint(sys.path)
+['',
+ '/home/bspitzmacher/DJANGOX/djproject',
+ '/home/bspitzmacher/pynet_course/class9/exercise7',
+ '/home/bspitzmacher/applied_python/local/lib64/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/local/lib/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/lib64/python2.7',
+ '/home/bspitzmacher/applied_python/lib/python2.7',
+ '/home/bspitzmacher/applied_python/lib64/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/lib/python2.7/site-packages',
+ '/home/bspitzmacher/applied_python/lib64/python2.7/lib-dynload',
+ '/usr/lib64/python2.7',
+ '/usr/lib/python2.7']
+>>> quit()
+(applied_python)[bspitzmacher@ip-172-30-0-39 exercise7]$ 

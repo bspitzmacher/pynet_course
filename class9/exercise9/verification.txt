@@ -1,0 +1,10 @@
+applied_python)[bspitzmacher@ip-172-30-0-39 yourtest]$ python exercise9.py 
+Hello World
+What is your name? Brian
+Hello :  Brian
+Rock and Roll Country Pop
+A 2016 Ford Mustang?
+Your car is not too old
+A 2016 Ford Mustang?
+My favorite car!
+(applied_python)[bspitzmacher@ip-172-30-0-39 yourtest]$ 
