@@ -4,9 +4,14 @@ Update the NetworkDevice objects such that each NetworkDevice links to the corre
 '''
 
 from net_system.models import NetworkDevice, Credentials
+import django
 
+django.setup()
 net_devices = NetworkDevice.objects.all()
 creds = Credentials.objects.all()
+
+std_creds = creds[0]
+arista_creds = creds[1]
 
 for a_device in net_devices:
     if 'pynet-sw' in a_device.device_name:

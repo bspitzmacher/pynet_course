@@ -20,7 +20,7 @@ def main():
         ip_address='184.105.247.77',
         port=22,
     )
-    pynet_rtr1.save()
+    pynet_test1.save()
     
     pynet_test2 = NetworkDevice.objects.get_or_create(
         device_name='pynet-test2',
@@ -28,7 +28,7 @@ def main():
         ip_address='184.105.247.78',
         port=22,
     )
-    print pynet_test2
+    print NetworkDevice.objects.all()
 
 if __name__ == "__main__":
     main()
