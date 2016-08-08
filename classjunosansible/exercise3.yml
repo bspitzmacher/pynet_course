@@ -1,0 +1,11 @@
+---
+- name: Exercise3 -  Juniper and Ansible
+  hosts: pynet-sf-srx
+  tasks:
+    - name: Change hostname to 'bar'
+      junos_install_config:
+        host={{ ansible_ssh_host }}
+        file=test_config.xml
+        overwrite=false
+        user={{ juniper_user }}
+        passwd={{ juniper_passwd }}

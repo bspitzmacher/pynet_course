@@ -1,0 +1,1 @@
+Completed exercises in the Juniper and Ansible class.  Please review.  Thanks.
